@@ -15,6 +15,8 @@ module.exports = {
           light: "#707070",
           Dark: "#4B4B4B",
           product: "#2F3336",
+          social: "#323232",
+          placeholder: "#AEADB3"
         },
         purple: {
           DEFAULT: "#60375F",
@@ -31,6 +33,7 @@ module.exports = {
           DEFAULT: "#444444",
           light: "#707070",
         },
+        redFooter: "#EC1E24"
       },
       width: {
         play: "137px",
@@ -41,7 +44,8 @@ module.exports = {
         bigLogo: "313px",
         image: "343px",
         benefits: "140px",
-        110: "160px"
+        110: "160px",
+        279: "279px"
       },
       height: {
         banner: "475px",
@@ -56,17 +60,21 @@ module.exports = {
         cosmetic: "75px",
         textDescriptions: "72px",
         18: "18px",
-        33: "33px"
+        33: "33px",
+        117: "117px",
+        37: "37px",
       },
       fontSize: {
         text: "22px",
         name: "14px",
         title: "28px",
+        subcription: "15px",
+        red: "14px",
         textResponsive: "12px",
         subtitle: "18px",
         titlePrimary: "37px",
       },
-      borderRadius:{
+      borderRadius: {
         border: "40px"
       }
 

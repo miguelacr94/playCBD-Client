@@ -2,6 +2,8 @@ import React from 'react'
 import BenefitsPower from '../component/power/benefitsPower'
 import Products from '../component/power/Products'
 import Properties from '../component/power/Properties'
+import SocialRed from '../component/power/SocialRed'
+import Subcriptions from '../component/power/Subcriptions'
 import { terapeutic, stetics } from '../utils/data'
 
 const power = () => {
@@ -48,6 +50,28 @@ const power = () => {
                     </div>
                     <div>
                         <Products />
+                    </div>
+
+                    {/* sections 3 */}
+                    <div className="mt-cosmetic">
+                        <h1 className="sm:mt-20 mt-9 text-black font-medium font-regular text-center text-titlePrimary w-bigLogo m-auto leading-9">
+                            ¿POR QUE PLAY CBD POWERS?
+                        </h1>
+
+                    </div>
+
+                    <div className="mt-117">
+                        <h1 className="sm:mt-20 mt-9 text-black font-medium font-regular text-center text-titlePrimary w-bigLogo m-auto leading-9">
+                            LA CALIDAD NUESTRA RAZÓN DE SER
+                        </h1>
+
+                    </div>
+                    {/* sections 4 */}
+                    <div>
+                        <SocialRed />
+                    </div>
+                    <div>
+                        <Subcriptions />
                     </div>
 
                 </section>

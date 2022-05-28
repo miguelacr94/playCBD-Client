@@ -17,3 +17,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.center{
+  display: grid;
+  place-items: center;
+}
+#circle span{
+  position: absolute;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  height: 140px;
+  font-size: 25px;
+  width: 20px;
+  text-align: center;
+  transform-origin: bottom center;
+}
+
+.blue {
+  
+}
