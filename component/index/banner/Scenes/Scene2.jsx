@@ -9,84 +9,14 @@ import ScreenInitial from './scene1/ScreenInitial';
 import useScrollSnap from 'react-use-scroll-snap';
 import createScrollSnap from 'scroll-snap'
 import { animation } from '../../../../provider/animations/actions';
-
-const snapConfig = {
-    scrollSnapDestination: "0% 100%",
-    scrollTimeout: 1,
-    scrollTime: 3003
-};
-
-
-
+import Separator from '../../../Separator';
+import CbdScreeen1 from '../../../Cbd/Screnes/CbdScreeen1';
 
 const Scene2 = ({ section }) => {
-
+    const RefSeparator0 = useRef(null);
+    const imgUpDown = useRef(null);
     const Ref = useRef(null);
     const [inViewport, setInViewport] = useState(false);
-
-    // useEffect(() => {
-    //     const onChange = entries => {
-    //         entries.forEach(entry => {
-    //             if (entry.target === Ref.current) {
-    //                 if (entry.isIntersecting) {
-    //                     setInViewport(true);
-    //                     console.log('view2')
-    //                 } else {
-    //                     setInViewport(false);
-    //                     console.log('noview2');
-    //                 }
-    //             }
-    //         });
-
-    //     };
-    //     const observer = new IntersectionObserver(onChange, { threshold: 0.5 });
-    //     observer.observe(Ref.current);
-    // }, [Ref]);
-
-    // useEffect(() => {
-
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     ScrollTrigger.observe({
-    //         target: '.slides',
-    //         type: "wheel,touch",
-    //         onUp: () => console.log('up'),
-    //         onDown: () => console.log('down'),
-    //     });
-    // })
-
-    // useEffect(() => {
-    //     window.onscroll = function () {
-    //         let elem = document.querySelector('.containerScene');
-    //         let rect = elem.getBoundingClientRect();
-    //         if (rect.x < 20) {
-    //             elem.style.overflowY = 'scroll'
-    //         } else {
-    //             elem.style.overflowY = 'hidden'
-    //         }
-    //     }
-    // });
-
-
-    // useEffect(() => {
-
-    //     gsap.registerPlugin(ScrollTrigger);
-
-    //     const slides = [...document.querySelectorAll(".slide")];
-
-    //     ScrollTrigger.create({
-    //         trigger: ".slides",
-    //         markers: true,
-    //         snap: {
-    //             snapTo: 1 / (slides.length + 1),
-    //             duration: { min: 3, max: 6 },
-    //             ease: "power2.inOut"
-    //         }
-    //     });
-
-
-    // })
-
-    // useScrollSnap({ ref: Ref, duration: 100, delay: 50 });
 
 
 
@@ -99,17 +29,35 @@ const Scene2 = ({ section }) => {
 
         <div ref={Ref} className="slides">
 
-            <div className="slide">
+            {/* <div className="slide h-windows flex justify-center items-center">
+                <Separator
+                    Ref={RefSeparator0}
+                    image1="img1S1"
+                    image2="img2S1"
+                    image3="img3S1"
+                />
+
+            </div> */}
+
+            <div className="slide h-windows ">
                 <Screen1 />
 
             </div>
-            <div className="slide">
+            <div className="slide h-windows">
                 <Screen2 />
             </div>
-            <div className="slide">
+            <div className="slide h-windows ">
                 <Screen3 />
             </div>
-            <div className="slide">5</div>
+            <div className="slide h-windows">
+
+            </div>
+            <div className="slide h-windows  ">
+                <CbdScreeen1 />
+            </div>
+            <div className="slide h-windows ">
+                6
+            </div>
         </div>
 
 

@@ -13,13 +13,13 @@ const Screen3 = () => {
             entries.forEach(entry => {
                 if (entry.target === screen3.current) {
                     if (entry.isIntersecting) {
+                        // fondoDown();
                         animation();
-                        console.log('view3')
 
+                        setInViewport(true);
                     } else {
 
-                        console.log('noview3')
-
+                        setInViewport(false);
                     }
                 }
             });
@@ -28,123 +28,118 @@ const Screen3 = () => {
         observer.observe(screen3.current);
     }, [screen3]);
 
-    // useEffect(() => {
-    //     if (inViewport) {
-    //         const containerScreen3 = document.querySelector('#containerSceen3');
-    //         gsap.registerPlugin(ScrollTrigger);
-    //         ScrollTrigger.create({
-    //             trigger: containerScreen3,
-    //             onEnter: function () {
-    //                 animation();
-    //                 console.log('enter')
-    //             },
-    //             onEnterBack: function () {
-    //                 console.log('abajo1')
-    //                 animation2();
-    //             },
-    //             onLeave: function () {
-    //                 console.log('arriba1')
 
-    //             } // assure that the element is hidden when scrolled into view
+    // useEffect(() => {
+    //     if (inViewport === true) {
+    //         gsap.registerPlugin(ScrollTrigger);
+    //         ScrollTrigger.observe({
+    //             target: '#containerScreen3',
+    //             type: "wheel,touch",
+    //             onUp: () => '',
+    //             onDown: () => fondoUp(),
     //         });
     //     }
+    // })
 
-    // });
+
+    const fondoUp = () => {
+
+        const tl = gsap.timeline({
+
+        })
+        tl.to('#fondo', { y: '-100vh', ease: "power1", duration: 1 }, 0)
+
+    }
+    // const fondoDown = () => {
+
+    //     const tl = gsap.timeline({
+
+    //     })
+    //     tl.to('#fondo', { y: '0vh', ease: "power1", duration: 0.4 }, 0)
+
+    // }
+
+
+
+
 
 
     const animation = () => {
         const tl = gsap.timeline({
 
         })
-        tl.to('#imagen1S3', { y: '-20vh', ease: "power1", duration: 1 }, 0)
-            .to('#imagen2S3', { y: '-20vh', ease: "power1", delay: 0.3, duration: 1 }, 0)
+        tl.to('#fondo', { y: '0vh', ease: "power1", duration: 0.3 }, 0)
+            .to('#imagen1S3', { y: '-100vh', opacity: 1, ease: "power1", delay: 0.3, duration: 1 }, 0)
+            .to('#imagen2S3', { y: '-50vh', opacity: 1, ease: "power1", delay: 0.3, duration: 1 }, 0)
+            .to('#imagen3S3', { y: '-50vh', opacity: 1, ease: "power1", delay: 0.2, duration: 1 }, 0)
     }
-
-    const animation2 = () => {
-        const tl = gsap.timeline({
-
-        })
-        tl.to('#imagen1S3', { y: '20vh', ease: "power1", duration: 1 }, 0)
-            .to('#imagen2S3', { y: '20vh', ease: "power1", delay: 0.3, duration: 1 }, 0)
-
-    }
-
-
 
 
     return (
 
+        <div ref={screen3} id="containerScreen2" className="w-full flex justify-center items-center flex-col absolute h-windows overflow-hidden px-2">
 
-        <div ref={screen3} id="containerScreen3" className="flex justify-center items-end absolute h-windows">
 
-            <div id="imagen1S3" className="w-64 h-64 bg-red-400 relative m-2">1</div>
-            <div id="imagen2S3" className="w-64 h-64 bg-red-300 relative m-2">2</div>
-            <div className="w-full"></div>
+            <div className="w-full h-4/6  flex items-center px-2">
+                <div className="flex  justify-center">
+                    <img
+                        id="imagen1S3"
+                        src='./image/balsamolabel.png'
+                        className="w-20 h-labialR mt-screenHX2"
+                    />
+                </div>
+                <div>
+
+                    <img
+                        id="imagen2S3"
+                        src='./image/antioxidante.png'
+                        className="w-beneficio3 h-beneficio3 mt-screenH"
+                    />
+                </div>
+            </div>
+            <div className="w-full h-2/6 flex justify-center items-center">
+                <div id="imagen3S3" className="fond-bold text-coffe text-center  flex justify-center items-center flex-col w-260 lg:h-4/6  lg:mb-4 mt-screenH">
+                    <h2 className="text-textR lg:text-bold font-bold">BÁLSAMO LABIAL</h2>
+                    <span className="mt-2 lg:text-cursive text-mgR">20mg CBD</span>
+                    <button className="w-button h-8 rounded-full border-2 border-coffe text-coffe bg-transparent text-mono font-sans mt-1 m-auto">
+                        conocer más
+                    </button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            {/* <div className="w-1/3 h-windows  lg:flex lg:justify-end lg:items-end">
+                <div id="imagen2S3" className="h-4/6 w-full  flex justify-end items-center">
+                    <img src='./image/antioxidante.png'
+                        className="w-beneficio3 h-beneficio3"
+                    />
+                </div>
+            </div>
+            <div className="w-1/3 h-windows  flex lg:items-end justify-center">
+                <div id="imagen1S3" className="w-44  lg:w-64 h-4/6 flex justify-center items-end" >
+                    <img
+                        src='./image/balsamolabel.png'
+                        className="w-54 h-labial "
+                    />
+                </div>
+            </div>
+            <div className="w-1/3 h-windows  flex lg:items-end justify-start">
+                <div id="imagen3S3" className="fond-bold text-coffe text-center flex justify-center items-center flex-col   w-260 lg:h-4/6  ">
+                    <h2 className="text-bold font-bold">BÁLSAMO LABIAL</h2>
+                    <span className="mt-2 text-cursive">20mg CBD</span>
+                    <button className="border-2 border-coffe rounded-full w-button h-10 mt-4">Conocer más</button>
+                </div>
+            </div>
+ */}
+
         </div>
 
-
-
-        // <div ref={outerRef} className="flex flex-col w-full">
-        //     <div className="h-separatorSection w-full bg-grey panel" />
-
-
-        //     <div className="w-full flex bg-red-400 lg:h-windows h-auto py-2 lg:py-0 justify-center items-center flex-col-reverse lg:flex-row">
-        //         <div className=" w-full lg:w-1/3 flex lg:justify-end justify-center items-center">
-        //             <div className="flex lg:justify-end justify-center items-center flex-col text-center w-250 lg:w-auto text-coffe">
-        //                 <h2 className="text-bold font-bold">BÁLSAMO LABIAL</h2>
-        //                 <span className="mt-2 text-cursive">20mg CBD</span>
-        //                 <button className="border-2 border-coffe rounded-full w-button h-10 mt-11">Conocer más</button>
-        //             </div>
-        //         </div>
-        //         <div className="w-full lg:w-1/3 lg:h-labial h-img flex justify-center ">
-        //             <img
-        //                 src='./image/balsamolabel.png'
-        //                 classname="lg:h-labial h-img w-labial"
-        //             />
-        //         </div>
-
-        //         <div className="w-full lg:w-1/3 flex lg:justify-start justify-center items-center">
-        //             <img src='./image/antioxidante.png'
-        //                 className="lg:w-image w-60"
-        //             />
-
-        //         </div>
-        //     </div>
-
-
-        //     <div className="h-separatorSection w-full bg-grey panel" />
-
-        // </div>
-        // <div ref={screen3} id="containerSceen3" className="w-full h-windows flex items-center bg-blue-400 relative">
-
-        //     <div className="w-full flex bg-red-400 lg:h-windows h-auto py-2 lg:py-0 justify-center items-center flex-col-reverse lg:flex-row">
-        //         <div className=" w-full lg:w-1/3 flex lg:justify-end justify-center items-center">
-        //             <div className="flex lg:justify-end justify-center items-center flex-col text-center w-250 lg:w-auto text-coffe">
-        //                 <h2 className="text-bold font-bold">BÁLSAMO LABIAL</h2>
-        //                 <span className="mt-2 text-cursive">20mg CBD</span>
-        //                 <button className="border-2 border-coffe rounded-full w-button h-10 mt-11">Conocer más</button>
-        //             </div>
-        //         </div>
-        //         <div id="imagen1S3" className="w-full lg:w-1/3 lg:h-labial h-img flex justify-center ">
-        //             <img
-        //                 src='./image/balsamolabel.png'
-        //                 classname="lg:h-labial h-img w-labial"
-        //             />
-        //         </div>
-
-        //         <div id="imagen2S3" className="w-full lg:w-1/3 flex lg:justify-start justify-center items-center">
-        //             <img src='./image/antioxidante.png'
-        //                 className="lg:w-image w-60"
-        //             />
-
-        //         </div>
-        //     </div>
-
-
-        //     <div id="separator11" className="bg-transparent h-4 w-full absolute" />
-        //     <div id="separator1S3" className="bg-transparent h-4 w-full absolute mt-separatorScreen" />
-        //     <div id="separator12" className="bg-transparent h-4 w-full absolute -mt-separatorScreen" />
-        // </div>
 
 
     )

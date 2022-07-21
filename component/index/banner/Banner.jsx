@@ -6,6 +6,7 @@ import ImgBanner from "../ImgBanner";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Scene2 from "./Scenes/Scene2";
 import Separator from "../../Separator";
+import CbdContainer from "../../Cbd/CbdContainer";
 
 
 export default function Banner() {
@@ -87,25 +88,6 @@ export default function Banner() {
     tl.to(fondo, { x: '-110%', ease: "none" }, 0)
 
 
-
-
-    // gsap.to(
-    //   containerSection2, {
-    //   yPercent: -10,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     scrub: 1,
-    //     duration: 4,
-    //     start: () => "+=" + (containerSection.offsetWidth / sections.length) * 6,
-    //     // end: () => "+=" + (containergeneral.clientHeight),
-    //     snap: 1 / 5
-    //   }
-    // });
-
-
-
-
-
   });
 
   useEffect(() => {
@@ -117,67 +99,91 @@ export default function Banner() {
     ScrollTrigger.create({
 
       trigger: ".slides",
-      markers: true,
       scrollTrigger: {
-        scrub: 0.5,
+        scrub: 1,
       },
       snap: {
         snapTo: 1 / (slides.length + 1),
-        duration: 1,
+        duration: 1.5,
         ease: "power2.inOut"
       }
     });
+  });
+
+
+  useEffect(() => {
+    const slide = document.querySelectorAll('.slide');
+    const tlBn = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.slides',
+        start: () => `${slide[0].clientHeight * 2}px`,
+        end: () => `${slide[0].clientHeight * 3}px`,
+        scrub: true,
+        duration: 2,
+        markers: true,
+
+      }
+    });
+    tlBn.to('#fondo', { y: '-100vh', ease: "none" }, 0)
+
+
+  })
+
+  useEffect(() => {
+    const slide = document.querySelectorAll('.slide');
+    const tlBn = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.slides',
+        start: () => `${slide[0].clientHeight * 1}px`,
+        end: () => `${slide[0].clientHeight * 2}px`,
+        scrub: true,
+        duration: 2,
+        markers: true,
+
+      }
+    });
+    tlBn.to('#fondoColor', { opacity: 1, ease: "none" }, 0)
+
+
+  })
+  useEffect(() => {
+    const slide = document.querySelectorAll('.slide');
+    const tlBn = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.slides',
+        start: () => `${slide[0].clientHeight * 3}px`,
+        end: () => `${slide[0].clientHeight * 4}px`,
+        scrub: true,
+        duration: 2,
+        markers: true,
+
+      }
+    });
+    tlBn.to('#fondoColor', { y: '-100vh', opacity: 0, ease: "none" }, 0)
 
 
   })
 
 
-  // useEffect(() => {
-  //   const onChange = entries => {
-  //     entries.forEach(entry => {
-  //       if (entry.target === Ref.current) {
-  //         if (entry.isIntersecting) {
-
-  //           console.log('view2')
-  //           animation2();
-  //         } else {
-
-  //           console.log('noview2');
-  //         }
-  //       }
-  //     });
-
-  //   };
-  //   const observer = new IntersectionObserver(onChange, { threshold: 0.5 });
-  //   observer.observe(Ref.current);
-  // }, [Ref]);
-
-
-
-
-  // const animation2 = () => {
-  //   setTimeout(() => {
-  //     const tl = gsap.timeline({
-
-  //     })
-  //     tl.to('#img1S1', { y: '0vh', ease: "power", duration: 1 }, 0)
-  //       .to('#img2S1', { y: '0vh', ease: "power1", delay: 0.3, duration: 1 }, 0)
-
-  //   }, 0);
-
-  // }
 
 
   return (
 
     <>
       <div id="container_General" className="container_General  relative" >
-
+        <div id="fondoColor" className="w-100 fixed  -z-10 opacity-0">
+          <div className=" w-full h-windows fondoColor  " />
+        </div>
         <div id="fondo" className="w-100 fixed ml-100 -z-10">
           <div className=" w-115 h-windows fondo -ml-fondo " />
         </div>
+
         <div id="banner" className="layer w-banner fixed -z-10 flex bg-grey " data-depth='5.5'>
           <img src="./banner.svg" className="ml-product h-windows w-banner " />
+        </div>
+
+        <div id="" className="w-100 fixed -z-10 flex justify-center items-end text-end h-windows">
+          <h2 id="cbd" className="-mb-cbd opacity-0">¿QUÉ ES EL CBD?</h2>
         </div>
 
 
@@ -187,7 +193,7 @@ export default function Banner() {
           {
             drops && drops.map((drop, index) => {
               return (
-                <section key={index} id="sections" className="">
+                <section key={index} id="sections" className="flex justify-center items-center">
                   <img
                     id={drop.id}
                     src={drop.image}
@@ -198,19 +204,21 @@ export default function Banner() {
             })
           }
           <section id="sections" className="h-windows" >5</section>
-          <section id="sections" className="h-windows flex justify-center items-end"  >
+          <section id="sections" className="h-windows flex justify-center items-center"  >
 
-            {/* <div ref={Ref} className="w-full h-8 bg-grey absolute">--</div> */}
+
             <Separator
-                Ref={RefSeparator0}
-                image1="img1S1"
-                image2="img2S1"
+              Ref={RefSeparator0}
+              image1="img1S1"
+              image2="img2S1"
+              image3="img3S1"
             />
 
           </section>
 
         </div>
         <Scene2 />
+
       </div>
 
 

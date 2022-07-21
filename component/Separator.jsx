@@ -6,20 +6,15 @@ import { gsap } from "gsap";
 const Separator = ({ Ref, image1, image2, image3 }) => {
 
 
-
-    console.log(Ref);
-    console.log(image1.id);
-    console.log(image2);
-
     useEffect(() => {
         const onChange = entries => {
             entries.forEach(entry => {
                 if (entry.target === Ref.current) {
                     if (entry.isIntersecting) {
-                        console.log('view');
+
                         animationDown();
                     } else {
-                        console.log('noview')
+
                         // animation2();
 
                     }
@@ -38,8 +33,9 @@ const Separator = ({ Ref, image1, image2, image3 }) => {
             const tl = gsap.timeline({
 
             })
-            tl.to(`#${image1}`, { y: '20vh', ease: "power", duration: 1 }, 0)
-                .to(`#${image2}`, { y: '20vh', ease: "power1", delay: 0.3, duration: 1 }, 0)
+            tl.to(`#${image1}`, { opacity: 0, y: '100vh', ease: "power", duration: 3 }, 0)
+                .to(`#${image2}`, { opacity: 0, y: '100vh', ease: "power1", delay: 0.3, duration: 3 }, 0)
+                .to(`#${image3}`, { opacity: 0, y: '100vh', ease: "power1", delay: 0.5, duration: 3 }, 0)
 
         }, 0);
 
@@ -48,7 +44,7 @@ const Separator = ({ Ref, image1, image2, image3 }) => {
 
 
     return (
-        <div ref={Ref} className="w-full h-8 bg-grey absolute">--</div>
+        <div ref={Ref} className="w-full h-8  absolute  bg-grey">-</div>
     )
 }
 
