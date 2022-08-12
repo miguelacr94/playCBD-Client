@@ -12,6 +12,9 @@ const Screen1 = ({ id }) => {
     const outerRef = useRef(null);
     const RefSeparator1 = useRef(null);
     const [inViewport, setInViewport] = useState(false);
+    const [state, setState] = useState(0);
+
+    console.log(state);
 
     useEffect(() => {
         const onChange = entries => {
@@ -45,15 +48,31 @@ const Screen1 = ({ id }) => {
     //     animation();
     // }
 
+  useEffect(() => {
+        // if (inViewport === true) {
+            if(state === 0){
+            gsap.registerPlugin(ScrollTrigger);
+            ScrollTrigger.observe({
+                target: '#containerScreen1',
+                type: "wheel,touch",
+                onUp: () => setState(0),
+                onDown: () => setState(1),
+            });
+        }
+        // }
+    })
+
+
+
 
     const animation = () => {
         setTimeout(() => {
             const tl = gsap.timeline({
 
             })
-            tl.to('#img1S1', { y: '-100vh', ease: "power1", opacity: 1, duration: 1 }, 0)
-                .to('#img2S1', { y: '-100vh', ease: "power1", opacity: 1, delay: 0.3, duration: 1 }, 0)
-                .to('#img3S1', { y: '-100vh', ease: "power1", opacity: 1, delay: 0.2, duration: 1 }, 0)
+            tl.to('#img1S1', { y: '-100vh', ease: "power1", opacity: 1, duration: 2 }, 0)
+                .to('#img2S1', { y: '-100vh', ease: "power1", opacity: 1, delay: 0.5, duration: 2 }, 0)
+                .to('#img3S1', { y: '-100vh', ease: "power1", opacity: 1, delay: 0.5, duration: 2 }, 0)
         }, 0);
 
 

@@ -77,18 +77,18 @@ const Screen3 = () => {
 
     return (
 
-        <div ref={screen3} id="containerScreen2" className="w-full flex justify-center items-center flex-col absolute h-windows overflow-hidden px-2">
+        <div ref={screen3} id="containerScreen2" className="w-full flex lg:flex-row justify-center items-center flex-col absolute h-windows overflow-hidden px-2">
 
 
-            <div className="w-full h-4/6  flex items-center px-2">
-                <div className="flex  justify-center">
+            <div className="w-full lg:w-4/6 h-4/6  flex lg:flex-row-reverse items-center px-2">
+                <div className="flex  justify-center lg:w-3/6 ">
                     <img
                         id="imagen1S3"
                         src='./image/balsamolabel.png'
                         className="w-20 h-labialR mt-screenHX2"
                     />
                 </div>
-                <div>
+                <div className="lg:w-3/6 lg:flex lg:justify-end">
 
                     <img
                         id="imagen2S3"
@@ -97,7 +97,7 @@ const Screen3 = () => {
                     />
                 </div>
             </div>
-            <div className="w-full h-2/6 flex justify-center items-center">
+            <div className="w-full lg:w-2/6 h-2/6 flex justify-center items-center lg:justify-start">
                 <div id="imagen3S3" className="fond-bold text-coffe text-center  flex justify-center items-center flex-col w-260 lg:h-4/6  lg:mb-4 mt-screenH">
                     <h2 className="text-textR lg:text-bold font-bold">BÁLSAMO LABIAL</h2>
                     <span className="mt-2 lg:text-cursive text-mgR">20mg CBD</span>

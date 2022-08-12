@@ -74,12 +74,12 @@ const Screen2 = () => {
     return (
 
 
-        <div ref={screen2} id="containerScreen2" className="w-full flex justify-center items-center flex-col absolute h-windows overflow-hidden px-2">
+        <div ref={screen2} id="containerScreen2" className="lg:w-5/6 w-full flex justify-center items-center flex-col lg:flex-row absolute h-windows overflow-hidden px-2">
 
 
 
-            <div className="w-full h-4/6 flex items-center">
-                <div className="w-3/6">
+            <div className="w-full h-4/6 flex items-center  lg:w-4/6">
+                <div className="w-3/6 lg:flex lg:items-end lg:flex-col">
                     <div className="h-16" />
                     <img
                         id="imagen1S2"
@@ -87,7 +87,7 @@ const Screen2 = () => {
                         className="lg:w-beneficio2 lg:h-beneficio2 mt-screenH opacity-0"
                     />
                 </div>
-                <div className="w-3/6 flex justify-end px-2 ">
+                <div className="w-3/6 flex justify-end lg:justify-center px-2 ">
                     <img
                         id="imagen2S2"
                         src='./image/aceite.png '
@@ -96,7 +96,7 @@ const Screen2 = () => {
                 </div>
 
             </div>
-            <div className="w-full h-2/6  flex justify-center items-center ">
+            <div className="w-full h-2/6  flex justify-center items-center lg:w-2/6  lg:flex lg:items-start lg:flex-col">
                 <div id="imagen3S2" className="fond-bold text-coffe text-center  flex justify-center items-center flex-col w-260 lg:h-4/6  lg:mb-4 mt-screenH opacity-0">
                     <h2 className="text-textR lg:text-bold font-bold">ACEITE CARA Y CUERPO</h2>
                     <span className="mt-2 lg:text-cursive text-mgR">300mg CBD</span>

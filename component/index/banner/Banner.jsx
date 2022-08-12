@@ -79,7 +79,7 @@ export default function Banner() {
       scrollTrigger: {
         trigger: fondo,
         start: () => `${sections[0].clientWidth * 3.2}px`,
-        end: () => `${sections[0].clientWidth * 6}px`,
+        end: () => `${sections[0].clientWidth * 5}px`,
         scrub: 1,
         duration: 2,
 
@@ -178,7 +178,7 @@ export default function Banner() {
           <div className=" w-115 h-windows fondo -ml-fondo " />
         </div>
 
-        <div id="banner" className="layer w-banner fixed -z-10 flex bg-grey " data-depth='5.5'>
+        <div id="banner" className="layer w-banner fixed -z-10 flex " data-depth='5.5'>
           <img src="./banner.svg" className="ml-product h-windows w-banner " />
         </div>
 
@@ -203,8 +203,18 @@ export default function Banner() {
               )
             })
           }
-          <section id="sections" className="h-windows" >5</section>
-          <section id="sections" className="h-windows flex justify-center items-center"  >
+          <section id="sections" className="h-windows" >
+
+          </section>
+          <section id="sections" className="h-windows flex justify-center items-center py-8"  >
+
+            <div className="w-4/6 h-5/6 flex flex-col justify-center items-center">
+              <h2 className="text-coffe text-center text-bigText">CUIDADOS PARA</h2>
+
+              <h2 className="text-white text-center text-max">LA PIEL</h2>
+            </div>
+
+
 
 
             <Separator

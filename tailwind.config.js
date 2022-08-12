@@ -73,6 +73,7 @@ module.exports = {
         250: "250px",
         260: "260px",
         292: "292px",
+        300: "350px",
         330: "330px",
         344: "344px",
         400: "400px",
@@ -106,8 +107,10 @@ module.exports = {
         Itemvh: "40vh",
         BigItemvh: "60vh",
         110: "120vh",
+        190: "190px",
         slideScreen: "130vh",
         247: "247px",
+        200: "250px",
         360: "360px",
         606: "606px",
         aceite: "600px",
@@ -132,8 +135,9 @@ module.exports = {
         cosmetic: "75px",
         textDescriptions: "72px",
         18: "18px",
-        cbd: "10%",
+        cbd: "10vh",
         33: "33px",
+        compuestos: "33vw",
         34: "34px",
         117: "117px",
         37: "37px",
@@ -173,7 +177,8 @@ module.exports = {
         xxl: "140px",
         textR: "20px",
         mgR: "25px",
-        max: "200px"
+        bigText: "120px",
+        max: "145px"
       },
       borderRadius: {
         border: "40px"

@@ -11,9 +11,10 @@ import createScrollSnap from 'scroll-snap'
 import { animation } from '../../../../provider/animations/actions';
 import Separator from '../../../Separator';
 import CbdScreeen1 from '../../../Cbd/Screnes/CbdScreeen1';
+import CbdScreen2 from '../../../Cbd/Screnes/CbdScreen2';
 
 const Scene2 = ({ section }) => {
-    const RefSeparator0 = useRef(null);
+    const RefBackCbd0 = useRef(null);
     const imgUpDown = useRef(null);
     const Ref = useRef(null);
     const [inViewport, setInViewport] = useState(false);
@@ -49,14 +50,19 @@ const Scene2 = ({ section }) => {
             <div className="slide h-windows ">
                 <Screen3 />
             </div>
-            <div className="slide h-windows">
-
+            <div className="slide h-windows flex justify-center items-center">
+                <Separator
+                    Ref={RefBackCbd0}
+                    image1="oil"
+                    image2="quimica"
+                // image3="img3S1"
+                />
             </div>
             <div className="slide h-windows  ">
                 <CbdScreeen1 />
             </div>
             <div className="slide h-windows ">
-                6
+                <CbdScreen2 />
             </div>
         </div>
 
